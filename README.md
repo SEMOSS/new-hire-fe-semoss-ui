@@ -1,4 +1,4 @@
-# First-Time Semoss-UI Setup Instructions
+soumya # First-Time Semoss-UI Setup Instructions
 
 1. Git clone this repository to your `webapps` folder. `git clone git@repo.semoss.org:semoss/semoss-ui.git`
 
