@@ -3,6 +3,7 @@ import { BlockConfig } from '@/stores';
 import {
     buildTypographySection,
     buildTextAlignSection,
+    buildAnimationSection,
 } from '../block-defaults.shared';
 import { TextBlockDef, TextBlock } from './TextBlock';
 import { TextFields } from '@mui/icons-material';
@@ -22,6 +23,7 @@ export const config: BlockConfig<TextBlockDef> = {
     data: {
         style: DefaultStyles,
         text: 'Hello world',
+        animation: true,
     },
     listeners: {},
     slots: {},
@@ -40,5 +42,10 @@ export const config: BlockConfig<TextBlockDef> = {
             ],
         },
     ],
-    styleMenu: [buildTypographySection(), buildTextAlignSection()],
+
+    styleMenu: [
+        buildTypographySection(),
+        buildTextAlignSection(),
+        buildAnimationSection(),
+    ],
 };

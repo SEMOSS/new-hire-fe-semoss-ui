@@ -17,6 +17,7 @@ import {
     FormatAlignRight,
     FormatBold,
     FormatItalic,
+    FormatPaintSharp,
     FormatUnderlined,
     VerticalAlignBottom,
     VerticalAlignCenter,
@@ -24,12 +25,15 @@ import {
 } from '@mui/icons-material';
 import { DistinctPathButtonGroupSettings } from '../block-settings/shared/DistinctPathButtonGroupSettings';
 import { SelectInputSettings } from '../block-settings/shared/SelectInputSettings';
+import { InputSettings } from '@/components/block-settings';
+import { SwitchSettings } from '@/components/block-settings/shared/SwitchSettings';
 
 /**
  * Build the Layout Section
  */
+
 export const buildLayoutSection = () => ({
-    name: 'Layout',
+    name: 'Layout 2',
     children: [
         {
             description: 'Vertical Align',
@@ -364,3 +368,27 @@ export const buildListener = <D extends BlockDef = BlockDef>(
         render: ({ id }) => <ListenerSettings id={id} listener={trigger} />,
     },
 ];
+
+//Soumya Animation Section
+export const buildAnimationSection = () => ({
+    name: 'Animation',
+    children: [
+        {
+            description: 'Animation',
+            render: ({ id }) => (
+                <SwitchSettings id={id} label="Animation" path="animation" />
+            ),
+        },
+        {
+            description: 'AnimationIteration',
+            render: ({ id }) => (
+                <InputSettings
+                    id={id}
+                    label="Animation Iteration Count"
+                    path="animationIteration"
+                    type="number"
+                />
+            ),
+        },
+    ],
+});
